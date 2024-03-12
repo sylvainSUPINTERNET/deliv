@@ -1,8 +1,42 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+
+import { getSession } from 'auth-astro/server';
+
+const session = await getSession(Astro.request);
+
 ---
 
+<Layout title="Home">
+
+	{
+		// server side
+		session ? (
+			<p>Welcome {session.user?.name}</p>
+		) : (
+			<p>Not logged in</p>
+		)
+	}
+
+
+	<button id="login">Login</button>
+	<button id="logout">Logout</button>
+
+	
+	<!-- <script is:inline define:vars={{ session }}> ! if we enable this is:inline, import will not work anymore -->
+	<script>
+		const {signIn, signOut} = await import('auth-astro/client');
+
+		(document.querySelector("#login") as any).onclick = () => signIn("github");
+		(document.querySelector("#logout") as any).onclick = () => signOut();
+
+	</script>
+</Layout>
+
+
+
+<!--
 <Layout title="Welcome to Astro.">
 	<main>
 		<svg
@@ -121,3 +155,4 @@ import Card from '../components/Card.astro';
 		padding: 0;
 	}
 </style>
+ -->

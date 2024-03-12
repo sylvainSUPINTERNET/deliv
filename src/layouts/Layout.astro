@@ -16,10 +16,12 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="antialiased text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900 h-full">
 		<slot />
 	</body>
 </html>
+
+<!--
 <style is:global>
 	:root {
 		--accent: 136, 58, 234;
@@ -49,3 +51,4 @@ const { title } = Astro.props;
 			monospace;
 	}
 </style>
+ -->
