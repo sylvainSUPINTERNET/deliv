@@ -34,19 +34,28 @@ const session = await getSession(Astro.request);
 					{
 				// server side
 				session ? (
-					
-					<p>Welcome {session.user?.name} - {session.user?.email}</p>
-					<img src={session.user?.image}></img>
-					
-
-				) : (
+					<div class="justify-end flex backdrop-blur-sm bg-white/5">
+						<div class="py-2.5">
+							<button id="logout" class="px-1 text-sm text-white">
+								logout	
+							</button>
+						</div>
+						<div class="py-2.5 px-1">
+							<span>|</span>	
+						</div>
+						<div class="flex space-x-2 py-2 px-2">
+							<p class="text-white text-sm py-1">{session.user?.email}</p>
+							<img class="w-8 h-8 rounded" src={session.user?.image}></img>
+						</div>
+					</div>
+				)
+				: (
+					<button id="login">Login</button>
 					<p>Not logged in</p>
 				)
 			} 
 
 
-			<button id="login">Login</button>
-			<button id="logout">Logout</button>
 		</nav>
 
 		<slot />
