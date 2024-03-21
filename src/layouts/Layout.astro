@@ -36,15 +36,13 @@ const session = await getSession(Astro.request);
 				session ? (
 					<div class="justify-end flex backdrop-blur-sm bg-white/5">
 						<div class="py-2.5">
-							<button id="logout" class="px-1 text-sm text-white">
+							<button id="logout" class="px-1 text-sm text-white hover:text-cyan-300 font-bold">
 								logout	
 							</button>
 						</div>
-						<div class="py-2.5 px-1">
-							<span>|</span>	
-						</div>
+
 						<div class="flex space-x-2 py-2 px-2">
-							<p class="text-white text-sm py-1">{session.user?.email}</p>
+							<p class="text-white text-sm py-1 font-light">{session.user?.email}</p>
 							<img class="w-8 h-8 rounded" src={session.user?.image}></img>
 						</div>
 					</div>
