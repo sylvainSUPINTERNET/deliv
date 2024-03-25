@@ -1,6 +1,11 @@
 
 export function Button () {
+    const createStore = () => {
+        console.log('clicked')
+    }
     return (
-        <button>Click me!</button>
+        <div className="bg-white">
+            <button onClick={createStore}>Créer un store</button>
+        </div>
     )
 }
