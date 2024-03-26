@@ -22,6 +22,10 @@ export async function onRequest ({ locals, request }:any, next:any) {
 
 
 
+    if (session && new URL(request.url).pathname === "/login") {
+        return Response.redirect(new URL("/dashboard", request.url), 302);
+    }
+
 
 
 

@@ -26,9 +26,18 @@ const session = await getSession(Astro.request);
 	</head>
 	<body class="antialiased text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900 h-full">
 		<script>
+			
 			const {signIn, signOut} = await import('auth-astro/client');
-			(document.querySelector("#login") as any).onclick = () => signIn("github");
-			(document.querySelector("#logout") as any).onclick = () => signOut();
+			
+
+			if ( document.querySelector("#login") ) {
+				(document.querySelector("#login") as any).onclick = () => signIn("github");
+			} 
+
+			if ( document.querySelector("#logout") ) {
+				(document.querySelector("#logout") as any).onclick = () => signOut();
+			}
+			
 		</script>
 		<nav>
 					{
