@@ -2,9 +2,40 @@
 import Layout from '../layouts/Layout.astro';
 import { Button } from '../components/dashboard/Button';
 
+
+
 ---
 
 <Layout title="Home">
+
+
+
+	
+	<div class="mx-auto container">
+
+		<h1 class="my-6 text-4xl text-white tracking-tight font-extrabold">Overview</h1>
+	
+		<!-- TODO : no store display this -->
+		<div class="flex flex-col justify-center p-6 text-center rounded shadow border border-gray-800 mt-2">
+			<div>
+				<p class="text-white tracking-tight text-2xl font-extrabold">Vous n'avez pas de Store pour le moment</p>
+			</div>
+			<div>
+				<div class="my-6">
+					<Button text="Nouveau Store" client:load className="text-2xl tracking-tight font-extrabold uppercase"></Button>
+				</div>
+			</div>
+		</div>
+		
+		<!-- TODO view when i have already some store created -->
+		<div class="flex flex-col p-6  rounded shadow border border-gray-800 mt-2">
+			<div>
+				<p class="text-white tracking-tight text-2xl font-extrabold">My Store</p>
+			</div>
+		</div>
+	
+	</div>
+
 </Layout>
 
 
