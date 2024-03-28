@@ -36,33 +36,36 @@ import { Image } from 'astro:assets';
 				<p class="text-white tracking-tight text-4xl font-extrabold">My Store</p>
 			</div>
 			<div>
-				<div class="space-x-2 flex mt-6">
+				<div class="space-x-2 flex flex-col md:flex-row  mt-6">
 
-					<div>
-						<div class="max-w-sm rounded-xl overflow-hidden shadow-lg  bg-card-product bg-cover bg-left backdrop-blur-md border border-gray-800">
-							<Image
-							class="w-full"
-							src="https://img.freepik.com/free-psd/fully-editable-mockup-with-glass-bottles-different-flavours_1361-2501.jpg?size=626&ext=jpg&ga=GA1.1.1319243779.1711584000&semt=ais"
-							alt="descriptive text"
-							width="200"
-							height="150" />
-							<div class="flex justify-end my-4 p-1 text-white tracking-tight text-2xl font-extrabold px-6">
-								19.99$
-							</div>
-							<div class="px-6">
-							  <div class="my-5 text-white tracking-tight text-xl font-extrabold">The Coldest Sunset</div>
-							  <p class="text-white text-base  tracking-tight">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-							  </p>
-							</div>
+						{
+							[1,2,3,4].map( (el) => {
+								return (
+									<div class="max-w-sm rounded-xl overflow-hidden shadow-lg  bg-card-product bg-cover bg-left backdrop-blur-md border border-gray-800">
+										<Image
+										class="w-full"
+										src="https://img.freepik.com/free-psd/fully-editable-mockup-with-glass-bottles-different-flavours_1361-2501.jpg?size=626&ext=jpg&ga=GA1.1.1319243779.1711584000&semt=ais"
+										alt="descriptive text"
+										width="200"
+										height="150" />
+										<div class="flex justify-end my-4 p-1 text-white tracking-tight text-2xl font-extrabold px-6">
+											19.99$
+										</div>
+										<div class="px-6">
+										<div class="my-5 text-white tracking-tight text-xl font-extrabold">The Coldest Sunset</div>
+										<p class="text-white text-base  tracking-tight">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+										</p>
+										</div>
 
-							<div class="flex justify-center mt-3 p-2 my-6">
-								<Button text="Ajouter" className='uppercase font-bold w-3/4' client:load></Button>
-							</div>  
-							
+										<div class="flex justify-center mt-3 p-2 my-6">
+											<Button text="Ajouter" className='uppercase font-bold w-3/4' client:load></Button>
+										</div>  
+									</div>
+								)
 
-						</div>
-					</div>
+							})
+						}
 				
 				</div>
 				
