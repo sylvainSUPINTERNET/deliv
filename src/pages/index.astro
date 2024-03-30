@@ -3,8 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { Button } from '../components/dashboard/Button';
 import { Image } from 'astro:assets';
 import { DeleteButton } from '../components/dashboard/DeleteButton';
-
-
+import { Icon } from 'astro-icon/components';
 
 const mockStoreProducts = [1,2,3,4];
 
@@ -39,42 +38,46 @@ const mockStoreProducts = [1,2,3,4];
 				<Button text="+ produit" className='uppercase font-bold' client:load></Button>
 			</div>
 			<div>
-				<div class="space-x-2 flex flex-col lg:flex-row mt-6">
-						{
-							mockStoreProducts.map( (el, i) => {
-								return (
-									<div>
-										<div class="max-w-sm rounded-xl overflow-hidden shadow-lg  bg-card-product bg-cover bg-left backdrop-blur-md border border-gray-800">
-											<Image
-											class="w-full"
-											src="https://img.freepik.com/free-psd/fully-editable-mockup-with-glass-bottles-different-flavours_1361-2501.jpg?size=626&ext=jpg&ga=GA1.1.1319243779.1711584000&semt=ais"
-											alt="descriptive text"
-											width="200"
-											height="150" />
-											<div class="flex justify-around my-4 p-1">
-												<div>
-													<DeleteButton text="Supprimer" className='uppercase font-bold' client:load></DeleteButton>
-												</div>
-												<div class="text-2xl text-white tracking-tight  font-extrabold px-6 space-x-2">19.99$</div>
+				<div class="space-x-2 flex flex-col lg:flex-row mt-6 items-center justify-center">
+					{
+						mockStoreProducts.map( (el, i) => {
+							return (
+								<div>
+									<div class="max-w-sm rounded-xl overflow-hidden shadow-lg bg-card-product bg-cover bg-left backdrop-blur-md border border-gray-800">
+										<Image class="w-full" src="https://img.freepik.com/free-psd/fully-editable-mockup-with-glass-bottles-different-flavours_1361-2501.jpg?size=626&ext=jpg&ga=GA1.1.1319243779.1711584000&semt=ais" alt="descriptive text" width="200" height="150" />
+										<div class="flex justify-around my-4 p-1">
+											<div>
+												<DeleteButton text="Supprimer" className='uppercase font-bold' client:load></DeleteButton>
 											</div>
-											<div class="px-6">
+											<div class="text-2xl text-white tracking-tight font-extrabold px-6 space-x-2">19.99$</div>
+										</div>
+										<div class="flex justify-around">
+											<div class="flex items-center">
+												<input checked id={`checked-checkbox-${i}`} type="checkbox" value=""
+													   class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600
+													   			hover:cursor-pointer">
+												<label for={`checked-checkbox-${i}`} class="ms-2 text-sm font-bold text-gray-900 dark:text-gray-300">
+													Livraison
+												</label>
+											</div>
+											<div class="cursor-pointer">
+												<Icon name="mdi:qrcode" height={64} width={64} color={"white"} />
+											</div>
+										</div>
+										<div class="px-6">
 											<div class="my-5 text-white tracking-tight text-xl font-extrabold">The Coldest Sunset</div>
-											<p class="text-white text-base  tracking-tight">
+											<p class="text-white text-base tracking-tight">
 												Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
 											</p>
-											</div>
-
-											<div class="flex justify-center mt-3 p-2 my-6">
-												<Button text="Ajouter" className='uppercase font-bold w-3/4' client:load></Button>
-											</div>  
 										</div>
+										<div class="flex justify-center mt-3 p-2 my-6">
+											<Button text="Ajouter" className='uppercase font-bold w-3/4' client:load></Button>
+										</div> 
 									</div>
-
-								)
-
-							})
-						}
-				
+								</div>
+							)
+						})
+					}
 				</div>
 				
 			</div>

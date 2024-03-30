@@ -1,5 +1,15 @@
 # Astro Starter Kit: Basics
 
+## Icon : 
+
+`https://icon-sets.iconify.design/`
+
+````json
+Find an Icon Set to use on the Iconify Icon Sets website
+Install the package (eg. npm i -D @iconify-json/mdi)
+Reference a specific icon using the name prop with (eg. mdi:account)
+````
+
 ```sh
 npm create astro@latest -- --template basics
 ```
