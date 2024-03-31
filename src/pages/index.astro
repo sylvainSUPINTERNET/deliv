@@ -30,11 +30,60 @@ const mockStoreProducts = [1,2,3,4];
 		</div>
 		
 		<!-- TODO view when i have already some store created -->
-		<div class="flex flex-col p-6  rounded shadow border border-gray-800 mt-2">
-			<div>
-				<p class="text-white tracking-tight text-4xl font-extrabold">My Store</p>
+		<div class="flex flex-col p-6 rounded shadow border border-gray-800 mt-2">
+			<div class="lg:flex lg:justify-around">
+				<p class="text-white tracking-tight text-4xl font-extrabold">My Store xxxxxxx x </p>
+				<div class="text-lg flex space-x-2 mt-2 cursor-pointer">Aperçu du store 
+					<div class="px-2">
+						<Icon name="mdi:link" height={32} width={32} color={"white"} />
+					</div>
+				</div>
 			</div>
-			<div class="mt-8 mb-2 md:mt-5 text-2xl flex justify-center md:justify-end">
+
+			<div class="flex flex-col md:flex-row md:space-x-3 text-white tracking-tight text-2xl font-extrabold mt-5">
+				<form class="my-6">
+					<div class="relative">
+						<div class="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none">
+							<svg class="w-6 h-6 text-gray-500 " aria-hidden="true" fill="currentColor" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg">
+								<path d="M18 13.446a3.02 3.02 0 0 0-.946-1.985l-1.4-1.4a3.054 3.054 0 0 0-4.218 0l-.7.7a.983.983 0 0 1-1.39 0l-2.1-2.1a.983.983 0 0 1 0-1.389l.7-.7a2.98 2.98 0 0 0 0-4.217l-1.4-1.4a2.824 2.824 0 0 0-4.218 0c-3.619 3.619-3 8.229 1.752 12.979C6.785 16.639 9.45 18 11.912 18a7.175 7.175 0 0 0 5.139-2.325A2.9 2.9 0 0 0 18 13.446Z"/>
+							</svg>
+							<span class="ml-1 text-gray-400 ">+33</span>
+						</div>
+						<input type="text" id="phone-input" aria-describedby="helper-text-explanation" 
+						class="bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-[3.7em] p-2.5 bg-transparent border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="" required />
+					</div>
+				</form>
+				<div class="my-6 text-black w-full md:w-3/4">
+					<input type="text" aria-describedby="helper-text-explanation" 
+					class="bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-transparent border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" 
+					placeholder="Phrase de présentation de votre store ..." required />
+				</div>
+			</div>
+
+				<!-- <div class="flex text-white tracking-tight text-2xl font-extrabold space-x-3 mt-5">
+					<form class="my-6">
+						<div class="relative">
+							<div class="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none">
+								<svg class="w-6 h-6 text-gray-500 " aria-hidden="true" fill="currentColor" viewBox="0 0 19 18" xmlns="http://www.w3.org/2000/svg">
+									<path d="M18 13.446a3.02 3.02 0 0 0-.946-1.985l-1.4-1.4a3.054 3.054 0 0 0-4.218 0l-.7.7a.983.983 0 0 1-1.39 0l-2.1-2.1a.983.983 0 0 1 0-1.389l.7-.7a2.98 2.98 0 0 0 0-4.217l-1.4-1.4a2.824 2.824 0 0 0-4.218 0c-3.619 3.619-3 8.229 1.752 12.979C6.785 16.639 9.45 18 11.912 18a7.175 7.175 0 0 0 5.139-2.325A2.9 2.9 0 0 0 18 13.446Z"/>
+								</svg>
+								<span class="ml-1 text-gray-400 ">+33</span>
+							</div>
+							<input type="text" id="phone-input" aria-describedby="helper-text-explanation" 
+							class="bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-[3.7em] p-2.5 bg-transparent border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="" required />
+						</div>
+					</form>
+
+					<div class="my-6 text-black w-3/4">
+						<input type="text" aria-describedby="helper-text-explanation" 
+						class="bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-transparent border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" 
+						placeholder="Phrase de présentation de votre store ..." required />
+					</div>
+
+				</div> -->
+
+
+			<div class="mt-8 mb-2 md:mt-5 text-2xl flex justify-center md:justify-center">
 				<Button text="+ produit" className='uppercase font-bold' client:load></Button>
 			</div>
 			<div>
